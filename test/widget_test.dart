@@ -1,30 +1,35 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:tarea2_app_moviles/main.dart';
+import 'package:tarea2_app_moviles/model/lugar.dart';
+import 'package:tarea2_app_moviles/view/pantallas/detalle_view.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('muestra el detalle y permite deslizar sus imágenes', (
+    tester,
+  ) async {
+    final lugar = lugaresEjemplo.first;
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await tester.pumpWidget(
+      MaterialApp(
+        onGenerateRoute: (settings) => MaterialPageRoute(
+          settings: RouteSettings(arguments: lugar),
+          builder: (_) => const DetalleView(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    expect(find.text(lugar.nombre), findsOneWidget);
+    expect(find.text(lugar.descripcion), findsOneWidget);
+    expect(find.text(lugar.ubicacion), findsOneWidget);
+    expect(find.byKey(const ValueKey('detalle-galeria')), findsOneWidget);
+    expect(find.bySemanticsLabel('Imagen 1 de 3'), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    await tester.dragFrom(const Offset(600, 150), const Offset(-600, 0));
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const ValueKey('detalle-galeria')), findsOneWidget);
+    expect(find.bySemanticsLabel('Imagen 2 de 3'), findsOneWidget);
   });
 }
