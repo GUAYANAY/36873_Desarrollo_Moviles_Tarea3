@@ -13,16 +13,16 @@ class Lugar {
   });
 }
 
-// Datos de ejemplo (las imágenes son de relleno, luego se cambian por reales)
 final List<Lugar> lugaresEjemplo = [
   const Lugar(
     nombre: 'Mitad del Mundo',
-    descripcion: 'Monumento y ciudad mitad del mundo donde pasa la línea ecuatorial.',
+    descripcion:
+        'Monumento y ciudad mitad del mundo donde pasa la línea ecuatorial.',
     ubicacion: 'San Antonio de Pichincha, Quito',
     imagenes: [
-      'https://picsum.photos/seed/mitad1/800/500',
-      'https://picsum.photos/seed/mitad2/800/500',
-      'https://picsum.photos/seed/mitad3/800/500',
+      'assets/images/mitad_1.jpg',
+      'assets/images/mitad_2.jpg',
+      'assets/images/mitad_3.jpg',
     ],
   ),
   const Lugar(
@@ -30,9 +30,9 @@ final List<Lugar> lugaresEjemplo = [
     descripcion: 'Laguna volcánica de aguas verdes dentro de un cráter.',
     ubicacion: 'Cotopaxi, Ecuador',
     imagenes: [
-      'https://picsum.photos/seed/quilotoa1/800/500',
-      'https://picsum.photos/seed/quilotoa2/800/500',
-      'https://picsum.photos/seed/quilotoa3/800/500',
+      'assets/images/quilotoa_1.jpg',
+      'assets/images/quilotoa_2.jpg',
+      'assets/images/quilotoa_3.jpg',
     ],
   ),
   const Lugar(
@@ -40,9 +40,9 @@ final List<Lugar> lugaresEjemplo = [
     descripcion: 'Ciudad de aventura con cascadas, termas y la Casa del Árbol.',
     ubicacion: 'Tungurahua, Ecuador',
     imagenes: [
-      'https://picsum.photos/seed/banos1/800/500',
-      'https://picsum.photos/seed/banos2/800/500',
-      'https://picsum.photos/seed/banos3/800/500',
+      'assets/images/banos_1.jpg',
+      'assets/images/banos_2.jpg',
+      'assets/images/banos_3.jpg',
     ],
   ),
   const Lugar(
@@ -50,9 +50,9 @@ final List<Lugar> lugaresEjemplo = [
     descripcion: 'Archipiélago único en el mundo, hogar de especies exóticas.',
     ubicacion: 'Océano Pacífico, Ecuador',
     imagenes: [
-      'https://picsum.photos/seed/galapagos1/800/500',
-      'https://picsum.photos/seed/galapagos2/800/500',
-      'https://picsum.photos/seed/galapagos3/800/500',
+      'assets/images/galapagos_1.jpg',
+      'assets/images/galapagos_2.jpg',
+      'assets/images/galapagos_3.jpg',
     ],
   ),
   const Lugar(
@@ -60,9 +60,9 @@ final List<Lugar> lugaresEjemplo = [
     descripcion: 'Uno de los volcanes activos más altos del mundo.',
     ubicacion: 'Parque Nacional Cotopaxi',
     imagenes: [
-      'https://picsum.photos/seed/cotopaxi1/800/500',
-      'https://picsum.photos/seed/cotopaxi2/800/500',
-      'https://picsum.photos/seed/cotopaxi3/800/500',
+      'assets/images/cotopaxi_1.jpg',
+      'assets/images/cotopaxi_2.jpg',
+      'assets/images/cotopaxi_3.jpg',
     ],
   ),
 ];

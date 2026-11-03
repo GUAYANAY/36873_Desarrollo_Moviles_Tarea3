@@ -28,7 +28,7 @@ class LugarCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(
+            Image.asset(
               lugar.imagenes.first,
               height: 180,
               width: double.infinity,
